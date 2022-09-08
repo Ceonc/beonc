@@ -8,6 +8,17 @@ const PalikaProvince = (request, response) => {
         if (error) {
             throw "database retrive error in palikaprovince controller function"
         }
+        console.log( results.rows);
+        response.status(200).json(sort1.sortName(results.rows, "general"))
+    })
+}
+
+const PalikaProvinceCeonc = (request, response) => {
+    pool.query(`SELECT "_1_PROVINCE", "_3_PALIKA", "_2_DISTRICT", "_4_NAME_OF_FACILITY" FROM odk_prod."TOOL_2_NEW_CORE" WHERE "TYPES_OF_HF"='ceonc'`, (error, results) => {
+        if (error) {
+            throw "database retrive error in palikaprovince controller function"
+        }
+        console.log( results.rows);
         response.status(200).json(sort1.sortName(results.rows, "general"))
     })
 }
@@ -23,5 +34,7 @@ const PalikaProvinceRobson = (request, response) => {
 
 module.exports = {
     PalikaProvince,
+    PalikaProvinceCeonc,
     PalikaProvinceRobson
+    
 }
