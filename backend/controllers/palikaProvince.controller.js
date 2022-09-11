@@ -8,7 +8,7 @@ const PalikaProvince = (request, response) => {
         if (error) {
             throw "database retrive error in palikaprovince controller function"
         }
-        console.log( results.rows);
+        // console.log( results.rows);
         response.status(200).json(sort1.sortName(results.rows, "general"))
     })
 }
@@ -18,7 +18,7 @@ const PalikaProvinceCeonc = (request, response) => {
         if (error) {
             throw "database retrive error in palikaprovince controller function"
         }
-        console.log( results.rows);
+        // console.log( results.rows);
         response.status(200).json(sort1.sortName(results.rows, "general"))
     })
 }
